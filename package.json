@@ -1,0 +1,28 @@
+{
+  "name": "node-cart",
+  "version": "1.0.0",
+  "description": "NodeCart is an user-friendly online shopping platform built with NodeJS.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app",
+    "start-server": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmedsasuhail/node-cart.git"
+  },
+  "author": "Ahmed Suhail S A",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/ahmedsasuhail/node-cart/issues"
+  },
+  "homepage": "https://github.com/ahmedsasuhail/node-cart#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
