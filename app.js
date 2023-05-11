@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 
 const adminRouter = require("./routes/admin");
 const shopRouter = require("./routes/shop");
-const errorsController = require("./controllers/errors");
+const errorController = require("./controllers/error");
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -20,7 +20,7 @@ app.use("/admin", adminRouter);
 app.use(shopRouter);
 
 // any route - 404
-app.use(errorsController.get404);
+app.use(errorController.get404);
 
 const port = 3000;
 app.listen(port, () => {
