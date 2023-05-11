@@ -3,8 +3,9 @@ const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 
-const adminData = require("./routes/admin");
+const adminRouter = require("./routes/admin");
 const shopRouter = require("./routes/shop");
+const errorsController = require("./controllers/errors");
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -14,14 +15,12 @@ app.set("view engine", "ejs");
 app.set("views", "views");
 
 // /admin routes
-app.use("/admin", adminData.router);
+app.use("/admin", adminRouter);
 // / routes
 app.use(shopRouter);
 
 // any route - 404
-app.use((req, res) => {
-  res.status(404).render("404", { pageTitle: "Page Not Found", path: null });
-});
+app.use(errorsController.get404);
 
 const port = 3000;
 app.listen(port, () => {
